@@ -25,7 +25,10 @@ driver = webdriver.Chrome(
     options=chrome_options
 )
 
-# Construct the search url. Note that ?f=live ensures ordering from the latest
+# Construct the search url. Note that ?f=live ensures ordering from the latest.
+#
+# TODO: Even with this ordering twitter seems to stop sending new messages after a certain period. It is probably
+#  preferable to slice the date range in smaller parts and run those sequentially
 driver.get("https://twitter.com/search?f=live&q=(%23opisis)%20until%3A2020-12-31%20since%3A2018-01-01&src=typed_query")
 
 driver.implicitly_wait(5)
